@@ -1,0 +1,9 @@
+name: Freerank
+description: This is just an example plugin
+authors: ['fran2019', 'ale28crack']
+main: dev._2lstudios.example.ExamplePlugin
+version: 1.0
+url: https://github.com/ImperiorDevelopment/Freerank
+commands:
+  freerank:
+    description: "This is a freerank command"
