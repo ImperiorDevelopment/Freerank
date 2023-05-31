@@ -12,6 +12,9 @@
   
 <p>To use it, you have to create the user group in the default group or in all the groups, depending on how you configure it, you have to deny the "freerank.claimed" permission.</p>
 
+![image](https://github.com/ImperiorDevelopment/Freerank/assets/101476953/7149c4dd-89b0-45bd-9189-8547fba0c5fc)
+
+
 <p>ScreenShots:</p>
 
 ![image](https://github.com/ImperiorDevelopment/Freerank/assets/101476953/e6014ff8-39b8-4683-bc60-826c09a7be21)
