@@ -26,7 +26,7 @@ public class commandfreerank implements CommandExecutor {
                 Player jugador = (Player) sender;
                 String nombrejugador = jugador.getName();
                 String comando = "lp user "+nombrejugador+" permission set freerank.claimed";
-		String comando2 = "lp user "+nombrejugador+" parent addtemp 1d comandante";
+		String comando2 = "lp user "+nombrejugador+" parent addtemp comandante 1d";
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&e&l[Freerank] &aYou Claimed this freerank!"));
                 enviarComandoConsola(comando);
 		enviarComandoConsola(comando2);
