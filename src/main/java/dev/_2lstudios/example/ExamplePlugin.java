@@ -18,7 +18,6 @@ public class ExamplePlugin extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD+"Enabling - "+ChatColor.GREEN+"Freerank");
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
         loadcommands();
-
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN+"Enabled - Freerank");
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
