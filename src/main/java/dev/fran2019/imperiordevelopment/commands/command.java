@@ -1,4 +1,4 @@
-package dev._2lstudios.example.commands;
+package dev.fran2019.imperiordevelopment.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,9 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import dev._2lstudios.example.ExamplePlugin;
+import dev.fran2019.imperiordevelopment.imperiordevelopmentPlugin;
 
-public class ExampleCommand implements CommandExecutor {
+public class imperiordevelopmentCommand implements CommandExecutor {
 
     public void enviarComandoConsola(String comando) {
         ConsoleCommandSender consola = Bukkit.getServer().getConsoleSender();

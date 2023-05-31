@@ -2,19 +2,19 @@
     <modelVersion>4.0.0</modelVersion>
     
     <!-- Project information -->
-    <groupId>dev._2lstudios</groupId>
-    <artifactId>ExamplePlugin</artifactId>
+    <groupId>dev.fran2019</groupId>
+    <artifactId>imperiordevelopmentPlugin</artifactId>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
     <name>Freerank</name>
-    <description>This is just an example plugin</description>
+    <description>This is just an imperiordevelopment plugin</description>
     <version>1.0</version>
     <url>https://github.com/ImperiorDevelopment/Freerank</url>
 
     <properties>
         <author>ale28crack</author>
-        <mainClass>dev._2lstudios.example.ExamplePlugin</mainClass>
+        <mainClass>dev.fran2019.imperiordevelopment.imperiordevelopmentPlugin</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
