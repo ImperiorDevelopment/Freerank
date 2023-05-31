@@ -3,18 +3,18 @@
     
     <!-- Project information -->
     <groupId>dev.fran2019</groupId>
-    <artifactId>imperiordevelopmentPlugin</artifactId>
+    <artifactId>imperiordevelopment</artifactId>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
     <name>Freerank</name>
-    <description>This is just an imperiordevelopment plugin</description>
+    <description>This is just an freerank plugin</description>
     <version>1.0</version>
     <url>https://github.com/ImperiorDevelopment/Freerank</url>
 
     <properties>
         <author>ale28crack</author>
-        <mainClass>dev.fran2019.imperiordevelopment.imperiordevelopmentPlugin</mainClass>
+        <mainClass>dev.fran2019.imperiordevelopment.FreeRank</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

@@ -1,16 +1,13 @@
 package dev.fran2019.imperiordevelopment.commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import dev.fran2019.imperiordevelopment.imperiordevelopmentPlugin;
-
-public class imperiordevelopmentCommand implements CommandExecutor {
+public class commandfreerank implements CommandExecutor {
 
     public void enviarComandoConsola(String comando) {
         ConsoleCommandSender consola = Bukkit.getServer().getConsoleSender();
@@ -29,13 +26,12 @@ public class imperiordevelopmentCommand implements CommandExecutor {
                 Player jugador = (Player) sender;
                 String nombrejugador = jugador.getName();
                 String comando = "lp user "+nombrejugador+" permission set freerank.claimed";
-				String comando2 = "lp user "+nombrejugador+" parent addtemp comandante";
+				String comando2 = "lp user "+nombrejugador+" parent addtemp 1d comandante";
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&e&l[Freerank] &aYou Claimed this freerank!"));
                 enviarComandoConsola(comando);
 				enviarComandoConsola(comando2);
         }else{
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&e&l[Freerank] &cYou have already claimed the freerank!"));
-            
             }
         }
         return true;
