@@ -1,9 +1,0 @@
-name: Freerank
-description: This is just an freerank plugin
-authors: ['fran2019', 'ale28crack']
-main: dev.fran2019.imperiordevelopment.FreeRank
-version: 1.0
-url: https://github.com/ImperiorDevelopment/Freerank
-commands:
-  freerank:
-    description: "This is a freerank command"
