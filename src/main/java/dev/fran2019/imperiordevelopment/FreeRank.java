@@ -12,6 +12,8 @@ public class FreeRank extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD+"Enabling - "+ChatColor.GREEN+"Freerank");
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
         loadcommands();
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"Loaded Commands");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"Creators: Fran2019 and Ale28Crack");
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN+"Enabled - Freerank");
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"===================================");
