@@ -40,6 +40,12 @@
             <version>3.1.0</version>
             <type>maven-plugin</type>
         </dependency>
+        <dependency>
+            <groupId>pl.mikigal</groupId>
+            <artifactId>ConfigAPI</artifactId>
+            <version>1.2.3</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <!-- Build settings -->
