@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import dev.fran2019.imperiordevelopment.commands.commandfreerank;
+import pl.mikigal.config.Config;
 import pl.mikigal.config.ConfigAPI;
 import pl.mikigal.config.annotation.Comment;
 import pl.mikigal.config.annotation.ConfigName;
@@ -29,7 +30,7 @@ public class FreeRank extends JavaPlugin {
     }
 
     @ConfigName("config.yml")
-    public interface ConfigFile extends pl.mikigal.config.Config {
+    public interface ConfigFile extends Config {
         //API: https://github.com/mikigal/ConfigAPI
         @Comment("This command is executed when ./freerank is done (Placeholders: %players%)")
         default String commandfreerankexecute() {
@@ -46,7 +47,7 @@ public class FreeRank extends JavaPlugin {
     }
     
     @ConfigName("lang.yml")
-    public interface MessagesFile extends pl.mikigal.config.Config {
+    public interface MessagesFile extends Config {
         //API: https://github.com/mikigal/ConfigAPI
         @Comment("Prefix of the plugin")
         default String prefix() {
