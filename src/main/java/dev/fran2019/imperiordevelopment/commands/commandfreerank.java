@@ -7,7 +7,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import dev.fran2019.imperiordevelopment.FreeRank;
+
 public class commandfreerank implements CommandExecutor {
+
+    FreeRank plugin = FreeRank.getPlugin(FreeRank.class);
+
+    
+
 
     public void enviarComandoConsola(String comando) {
         ConsoleCommandSender consola = Bukkit.getServer().getConsoleSender();
@@ -22,16 +29,26 @@ public class commandfreerank implements CommandExecutor {
         if(!(sender instanceof Player)){
             Bukkit.getConsoleSender().sendMessage("Comando no Disponible en consola");
         }else{
-            if(!sender.hasPermission("freerank.claimed")){
-                Player jugador = (Player) sender;
-                String nombrejugador = jugador.getName();
-                String comando = "lp user "+nombrejugador+" permission set freerank.claimed";
-		        String comando2 = "lp user "+nombrejugador+" parent addtemp comandante 14d";
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&e&l[Freerank] &aYou Claimed this freerank!"));
-                enviarComandoConsola(comando);
-		        enviarComandoConsola(comando2);
+            if(args.length <= 0 ){
+                if(!sender.hasPermission("freerank.claimed")){
+                    Player jugador = (Player) sender;
+                    String nombrejugador = jugador.getName();
+                    String comando = plugin.getConfigFile().commandfreerank().replace("%player%", nombrejugador);
+                    String comando2 = plugin.getConfigFile().commandfreerankexecute().replace("%player%", nombrejugador);
+                    sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+plugin.getMessagesFile().claimmessage()));
+                    enviarComandoConsola(comando);
+                    enviarComandoConsola(comando2);
+                }else{
+                    sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+plugin.getMessagesFile().alreadyclaimedmessage()));
+                }
+        }else if(args.length == 1 && args[1] == "reload" && sender.hasPermission(plugin.getConfigFile().adminpermission())){
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cPlugin has been reloaded"));
+        }else if(args.length == 1 && args[1] == "help" && sender.hasPermission(plugin.getConfigFile().adminpermission())){
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&c./freerank reload - You can reload the plugin!!"));
+        }else if(args.length == 1 && args[1] == "version" || args[1] == "authors"){
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cOfficial Repository: https://github.com/ImperiorDevelopment/Freerank/"));
         }else{
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&e&l[Freerank] &cYou have already claimed the freerank!"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cError please use &a./freerank"));
             }
         }
         return true;
