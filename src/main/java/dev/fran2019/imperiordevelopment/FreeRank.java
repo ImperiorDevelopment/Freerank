@@ -102,4 +102,3 @@ public class FreeRank extends JavaPlugin {
         return messagesfile;
     }
 }
-//
