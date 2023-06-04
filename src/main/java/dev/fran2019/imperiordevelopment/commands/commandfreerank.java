@@ -13,9 +13,6 @@ public class commandfreerank implements CommandExecutor {
 
     FreeRank plugin = FreeRank.getPlugin(FreeRank.class);
 
-    
-
-
     public void enviarComandoConsola(String comando) {
         ConsoleCommandSender consola = Bukkit.getServer().getConsoleSender();
         Bukkit.dispatchCommand(consola, comando);
@@ -47,6 +44,8 @@ public class commandfreerank implements CommandExecutor {
                 }
             }else if(args.length >= 1 && args[0].equalsIgnoreCase("reload") && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cPlugin has been reloaded"));
+                plugin.ConfigFile = configfile = ConfigAPI.init(ConfigFile.class,NameStyle.UNDERSCORE,CommentStyle.INLINE,true,this);
+                plugin.MessagesFile = messagesfile = ConfigAPI.init(MessagesFile.class,NameStyle.UNDERSCORE,CommentStyle.INLINE,true,this);
             }else if(args.length >= 1 && args[0].equalsIgnoreCase("help") && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c&m=============================================="));
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c./freerank reload - You can reload the plugin!!"));
