@@ -2,6 +2,7 @@
 
 <h2>Requirements</h2>
 
+<p>~ Requires Permission Plugin (Luckperms Recommended) ~</p>
 <p>~ Requires MC 1.8-1.18 ~</p>
 <p>~ Do with Love <\3 ~</p>
  
