@@ -30,25 +30,32 @@ public class commandfreerank implements CommandExecutor {
             Bukkit.getConsoleSender().sendMessage("Comando no Disponible en consola");
         }else{
             if(args.length <= 0 ){
-                if(!sender.hasPermission("freerank.claimed")){
-                    Player jugador = (Player) sender;
-                    String nombrejugador = jugador.getName();
-                    String comando = plugin.getConfigFile().commandfreerank().replace("%player%", nombrejugador);
-                    String comando2 = plugin.getConfigFile().commandfreerankexecute().replace("%player%", nombrejugador);
-                    sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+plugin.getMessagesFile().claimmessage()));
-                    enviarComandoConsola(comando);
-                    enviarComandoConsola(comando2);
+                if(sender.hasPermission(plugin.getConfigFile().getUsePermission())){
+                    if(!sender.hasPermission(plugin.getConfigFile().getClaimedPermission())){
+                        Player jugador = (Player) sender;
+                        String nombrejugador = jugador.getName();
+                        String comando = plugin.getConfigFile().getCommandFreeRank().replace("%player%", nombrejugador);
+                        String comando2 = plugin.getConfigFile().getCommandFreeRankExecute().replace("%player%", nombrejugador);
+                        sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getClaimMessage()));
+                        enviarComandoConsola(comando);
+                        enviarComandoConsola(comando2);
+                    }else{
+                        sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getAlreadyClaimedMessage()));
+                    }
                 }else{
-                    sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+plugin.getMessagesFile().alreadyclaimedmessage()));
+                    sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getNoPermissionsFreeMessage()));
                 }
-        }else if(args.length == 1 && args[1] == "reload" && sender.hasPermission(plugin.getConfigFile().adminpermission())){
-            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cPlugin has been reloaded"));
-        }else if(args.length == 1 && args[1] == "help" && sender.hasPermission(plugin.getConfigFile().adminpermission())){
-            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&c./freerank reload - You can reload the plugin!!"));
+        }else if(args.length == 1 && args[1] == "reload" && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cPlugin has been reloaded"));
+        }else if(args.length == 1 && args[1] == "help" && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c./freerank reload - You can reload the plugin!!"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c./freerank authors - You can reload the plugin!!"));
         }else if(args.length == 1 && args[1] == "version" || args[1] == "authors"){
-            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cOfficial Repository: https://github.com/ImperiorDevelopment/Freerank/"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cOfficial Repository: https://github.com/ImperiorDevelopment/Freerank/"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cCreators: &aFran2019 &cAnd &aale28crack"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cVersion: "+plugin.getDescription().getVersion()));
         }else{
-            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().prefix()+"&cError please use &a./freerank"));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getNoPermissionsAdminMessage()));
             }
         }
         return true;
