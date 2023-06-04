@@ -73,16 +73,13 @@ public class FreeRank extends JavaPlugin {
             return "&aYou Claimed this freerank!";
         }
         @Comment("Error")
-        default String getErrorMessage() {
-            return "&cError please use &a./freerank";
-        }
         @Comment("This message are a no permissions freerank message.")
         default String getNoPermissionsFreeMessage() {
-            return "&cError you dont have permissions";
+            return "&cError you do not have permissions";
         }
         @Comment("This message are a no permissions freerank message.")
         default String getNoPermissionsAdminMessage() {
-            return "&cError please use ./freerank";
+            return "&cError you do not have permissions";
         }
     }
 
