@@ -62,7 +62,7 @@ public class FreeRank extends JavaPlugin {
         //API: https://github.com/mikigal/ConfigAPI
         @Comment("Prefix of the plugin")
         default String getPrefix() {
-            return "&e&l[Freerank]";
+            return "&e&l[Freerank] ";
         }
         @Comment("This message is a already claimed freerank message.")
         default String getAlreadyClaimedMessage() {
