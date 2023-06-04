@@ -1,5 +1,3 @@
-# Freerank
-
 <h1>Easy FreeRank Plugin :)</h1>
 
 <h2>Requirements</h2>
