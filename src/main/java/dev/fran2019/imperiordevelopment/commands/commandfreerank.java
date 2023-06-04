@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import pl.mikigal.config.ConfigAPI;
 import org.bukkit.entity.Player;
 
 import dev.fran2019.imperiordevelopment.FreeRank;
@@ -43,20 +44,20 @@ public class commandfreerank implements CommandExecutor {
                     sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getNoPermissionsFreeMessage()));
                 }
             }else if(args.length >= 1 && args[0].equalsIgnoreCase("reload") && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cPlugin has been reloaded"));
-                plugin.ConfigFile = configfile = ConfigAPI.init(ConfigFile.class,NameStyle.UNDERSCORE,CommentStyle.INLINE,true,this);
-                plugin.MessagesFile = messagesfile = ConfigAPI.init(MessagesFile.class,NameStyle.UNDERSCORE,CommentStyle.INLINE,true,this);
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&cPlugin Reload Disabled, Please Restart or Reload."));
             }else if(args.length >= 1 && args[0].equalsIgnoreCase("help") && sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c&m=============================================="));
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c./freerank reload - You can reload the plugin!!"));
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c./freerank version - You can reload the plugin!!"));
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c&m=============================================="));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&c&m=============================================="));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&a/freerank reload - You can reload the plugin!!"));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&a/freerank version - You can reload the plugin!!"));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&c&m=============================================="));
             }else if(args.length >= 1 && args[0].equalsIgnoreCase("version")){
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c&m=============================================="));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&c&m=============================================="));
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&aOfficial Repository: &9https://github.com/ImperiorDevelopment/Freerank/"));
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&aCreators: &9fran2019 &aAnd &9ale28crack"));
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&aVersion: &b"+plugin.getDescription().getVersion()));
-                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+"&c&m=============================================="));
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', "&c&m=============================================="));
+            }else if(sender.hasPermission(plugin.getConfigFile().getAdminPermission())){
+                sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getErrorMessage()));
             }else{
                 sender.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', plugin.getMessagesFile().getPrefix()+plugin.getMessagesFile().getNoPermissionsAdminMessage()));
             }
