@@ -4,8 +4,14 @@
 
 <h2>Requirements</h2>
 
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.7     | :x:                |
+| 1.8.8   | :white_check_mark: |
+| 1.12.2  | :white_check_mark: |
+| 1.19.2  | :white_check_mark: |
+
 <p>~ Requires Permission Plugin (Luckperms Recommended) ~</p>
-<p>~ Requires MC 1.8-1.18 ~</p>
 <p>~ Do with Love <\3 ~</p>
  
 <h2>How Use</h2>
