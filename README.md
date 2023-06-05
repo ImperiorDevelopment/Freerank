@@ -1,5 +1,7 @@
 <h1>Easy FreeRank Plugin :)</h1>
 
+[![Java CI with Maven](https://github.com/ImperiorDevelopment/Freerank/actions/workflows/maven.yml/badge.svg)](https://github.com/ImperiorDevelopment/Freerank/actions/workflows/maven.yml)
+
 <h2>Requirements</h2>
 
 <p>~ Requires Permission Plugin (Luckperms Recommended) ~</p>
